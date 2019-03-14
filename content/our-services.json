@@ -1,0 +1,37 @@
+{
+  "title": "Våra populäraste tjänster",
+  "services": [
+    {
+      "link": "/montera-mobler/montera-ikea",
+      "title": "IKEA-montering",
+      "img": "../src/assets/ikea-montering.jpg"
+    },
+    {
+      "link": "/transporter/flytthjalp",
+      "title": "Flytthjälp",
+      "img": "../src/assets/flytthjalp.jpg"
+    },
+    {
+      "link": "/transporter/transport-till-atervinningen",
+      "title": "Skräp till återvinningen",
+      "img": "../src/assets/skrap-till-atervinningen.jpg"
+    },
+    {
+      "link": "/garden-help/tradgardshjalp",
+      "title": "Trädgårdshjälp",
+      "img": "../src/assets/tradgardshjalp.jpg"
+    },
+    {
+      "link": "/handyman/repair-and-fix",
+      "title": "Reparation & fix",
+      "img": "../src/assets/reparation-fix.jpg"
+    },
+    {
+      "link": "/else/tva-extra-hander",
+      "title": "Övrigt",
+      "img": "../src/assets/ovrigt.jpg"
+    }
+  ],
+  "buttonTitle": "Till alla kategorier",
+  "buttonLink": "/app"
+}

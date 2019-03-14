@@ -1,0 +1,29 @@
+{
+  "defaultPrice": "Pris 400kr",
+  "prices": [
+    { "_id": 1, "price": "Från 300 kr" },
+    { "_id": 2, "price": "Från 400 kr" },
+    { "_id": 3, "price": "Från 400 kr" },
+    { "_id": 4, "price": "Från 400 kr" },
+    { "_id": 11, "price": "Från 400 kr" },
+    { "_id": 12, "price": "Från 400 kr" },
+    { "_id": 13, "price": "Från 400 kr" },
+    { "_id": 15, "price": "Från 400 kr" },
+    { "_id": 16, "price": "Från 400 kr" },
+    { "_id": 17, "price": "Från 400 kr" },
+    { "_id": 18, "price": "Från 400 kr" },
+    { "_id": 19, "price": "Från 400 kr" },
+    { "_id": 20, "price": "Från 400 kr" },
+    { "_id": 24, "price": "Från 400 kr" },
+    { "_id": 25, "price": "Från 500 kr" },
+    { "_id": 28, "price": "Från 400 kr" },
+    { "_id": 29, "price": "Från 400 kr" },
+    { "_id": 30, "price": "Från 400 kr" },
+    { "_id": 32, "price": "Från 300 kr" },
+    { "_id": 33, "price": "Från 400 kr" },
+    { "_id": 34, "price": "Från 400 kr" },
+    { "_id": 35, "price": "Från 400 kr" },
+    { "_id": 38, "price": "Från 400 kr" },
+    { "_id": 39, "price": "Från 400 kr" }
+  ]
+}

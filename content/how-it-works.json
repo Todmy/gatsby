@@ -1,0 +1,20 @@
+{
+  "title": "Så fungerar det",
+  "options": [
+    {
+      "title": "Skapa uppdrag",
+      "content": "Skriv vad du behöver hjälp med eller ta en bild. Välj datum & tid samt sätt pris eller ta emot bud.",
+      "image": "hiw-option-furniture"
+    },
+    {
+      "title": "Få svar direkt",
+      "content": "Runners lägger bud på ditt uppdrag direkt. Se deras profil, betyg och omdömen och välj din Runner.",
+      "image": "hiw-option-blanks"
+    },
+    {
+      "title": "Få det gjort",
+      "content": "Anlita en Runner och betala tryggt direkt via oss. Vi släpper pengarna först när du har godkänt uppdraget.",
+      "image": "hiw-option-check"
+    }
+  ]
+}
