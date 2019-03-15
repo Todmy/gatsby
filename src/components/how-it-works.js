@@ -1,11 +1,13 @@
+
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
+import SectorBlock from './sector-block'
 
-import './styles.scss'
+import './how-it-works.scss'
 
-import HiwOptionFurniture from '../../assets/hiw-option-furniture.svg'
-import HiwOptionBlanks from '../../assets/hiw-option-blanks.svg'
-import HiwOptionCheck from '../../assets/hiw-option-check.svg'
+import HiwOptionFurniture from '../assets/hiw-option-furniture.svg'
+import HiwOptionBlanks from '../assets/hiw-option-blanks.svg'
+import HiwOptionCheck from '../assets/hiw-option-check.svg'
 
 // TODO: come up with better solution for dynamic mapping images and content
 const imageMap = {
@@ -14,9 +16,6 @@ const imageMap = {
   'hiw-option-check': HiwOptionCheck,
 }
 
-
-const Section = ({ children }) => <section className={`section`}>{children}</section>
-const SectionContent = ({ children }) => <div className={`section-content`}>{children}</div>
 const Header = ({ children }) => <h2 className={`section-header`}>{children}</h2>
 const OptionsContainer = ({ children }) => <div className={`section-options-container`}>{children}</div>
 const HowItem = ({ children }) => <div className={`section-how-item`}>{children}</div>
@@ -33,29 +32,25 @@ const HowItWorks = ({ data }) => {
   const options = data.options
 
   return (
-    <Section>
-      <SectionContent>
-        <Header>{title}</Header>
+    <SectorBlock className={`section`}>
+      <Header>{title}</Header>
 
-        <OptionsContainer>
+      <OptionsContainer>
 
-          { options.map((option, i) =>
+        { options.map((option, i) =>
+          <HowItem key={i}>
+            <StepImage src={option.image} />
+            <StepInfoContainer>
+              <StepTitle num={i + 1}>{option.title}</StepTitle>
+              <StepDescription>
+                {option.content}
+              </StepDescription>
+            </StepInfoContainer>
+          </HowItem>
+        ) }
 
-            <HowItem key={i}>
-              <StepImage src={option.image} />
-              <StepInfoContainer>
-                <StepTitle num={i + 1}>{option.title}</StepTitle>
-                <StepDescription>
-                  {option.content}
-                </StepDescription>
-              </StepInfoContainer>
-            </HowItem>
-
-          ) }
-
-        </OptionsContainer>
-      </SectionContent>
-    </Section>
+      </OptionsContainer>
+    </SectorBlock>
   );
 }
 

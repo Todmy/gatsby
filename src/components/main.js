@@ -1,12 +1,13 @@
-import React from 'react';
+import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
-import Typing from 'react-typing-animation';
-import Checkmark from '../Checkmark'
+import Typing from 'react-typing-animation'
+import Checkmark from './checkmark'
+import SectorBlock from './sector-block'
 
-import InsuranceBanner from './InsuranceBanner'
+import InsuranceBanner from './insurance-banner'
 
-import './styles.scss'
+import './main.scss'
 
 const H1 = ({ children }) => <h1 className={`heading`}>{children}</h1>
 const H2 = ({ children }) => <h2 className={`sub-heading`}>{children}</h2>
@@ -79,7 +80,9 @@ class Main extends React.Component {
         fluid={this.props.data.desktop.childImageSharp.fluid}
         backgroundColor={`#edeef0`}
       >
-        {this.renderContent()}
+        <SectorBlock>
+          {this.renderContent()}
+        </SectorBlock>
       </BackgroundImage>
     )
   }

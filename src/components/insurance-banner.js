@@ -2,7 +2,7 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import './styles.scss'
+import './insurance-banner.scss'
 
 const InsuranceLogo = ({ content: img }) => <Img fluid={img} className={`insurance-logo`} />
 

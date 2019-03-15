@@ -1,11 +1,11 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import Checkmark from '../Checkmark'
+import Checkmark from './checkmark'
+import SectorBlock from './sector-block'
 
-import './styles.scss'
+import './whos-comming.scss'
 
-const Container = ({ children }) => <section className={`whos-comming`}>{children}</section>
 const Header = ({ children }) => <h2 className={`whos-comming-header`}>{children}</h2>
 const Content = ({ children }) => <div className={`whos-comming-content`}>{children}</div>
 const Options = ({ children }) => <ul className={`whos-comming-content-options`}>{children}</ul>
@@ -20,7 +20,7 @@ const WhosComming = ({ data }) => {
   const { title, points } = data.text
 
   return (
-    <Container>
+    <SectorBlock className={`whos-comming`}>
       <Content>
         <Img imgStyle={{objectFit: 'contain'}} className={`whos-comming-img`} fluid={data.image} />
         <Options>
@@ -28,7 +28,7 @@ const WhosComming = ({ data }) => {
           { points.map((point, i) => <OptionItem key={i}>{point}</OptionItem>) }
         </Options>
       </Content>
-    </Container>
+    </SectorBlock>
   );
 }
 

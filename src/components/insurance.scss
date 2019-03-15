@@ -1,0 +1,82 @@
+$xs-size: 400px;
+$sm-size: 768px;
+$md-size: 990px;
+
+.insurance {
+  color: #767676;
+  font-size: 15px;
+  background: #edeef0;
+  text-align: center;
+
+  &-container {
+    display: flex;
+  }
+
+  &-header {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    margin-top: 0;
+    text-align: left;
+
+    @media (min-width: $md-size) {
+      font-size: 32px;
+    }
+  }
+
+  @media (min-width: $md-size) {
+    &-content {
+      padding: 0 25px;
+    }
+  }
+
+  &-description {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: justify;
+    padding-bottom: 45px;
+  }
+
+  &-button {
+    background-color: #767676;
+    border-radius: 6px;
+    color: #fff;
+    margin: 0 auto;
+    padding: 10px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 25px;
+
+    @media (min-width: $md-size) {
+      float: right;
+    }
+  }
+
+  &-img {
+    width: 160px;
+    margin: 0 auto;
+
+    &.big-screen {
+      min-width: 260px;
+    }
+  }
+}
+
+.small-screen {
+  display: inherit;
+}
+
+.big-screen {
+  display: none;
+}
+
+@media (min-width: $md-size) {
+  .small-screen {
+    display: none;
+  }
+  .big-screen {
+    display: inherit;
+  }
+}

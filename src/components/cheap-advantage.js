@@ -1,10 +1,11 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import SectorBlock from './sector-block'
 
-import './styles.scss'
+import './cheap-advantage.scss'
 
-const Container = ({ children }) => <section className={`cheap-advantage`}>{children}</section>
+const Container = ({ children }) => <section className={`cheap-advantage-container`}>{children}</section>
 const Header = ({ children }) => <h2 className={`cheap-advantage-header`}>{children}</h2>
 const Description = ({ children }) => <div className={`cheap-advantage-description`}>{children}</div>
 const InfoText = ({ children }) => <p className={`cheap-advantage-info`}>{children}</p>
@@ -14,15 +15,17 @@ const CheapAdvantage = ({ data }) => {
   const { title, text, buttonText, buttonLink } = data.text
 
   return (
-    <Container>
-      <Description>
-        <Header>{title}</Header>
-        <InfoText>{text}</InfoText>
-        <Button className={`big-screen`} link={buttonLink}>{buttonText}</Button>
-      </Description>
-      <Img imgStyle={{ objectFit: 'contain' }} className={`cheap-advantage-img`} fluid={data.image} />
-      <Button className={`small-screen`} link={buttonLink}>{buttonText}</Button>
-    </Container>
+    <SectorBlock className={`cheap-advantage`}>
+      <Container>
+        <Description>
+          <Header>{title}</Header>
+          <InfoText>{text}</InfoText>
+          <Button className={`big-screen`} link={buttonLink}>{buttonText}</Button>
+        </Description>
+        <Img imgStyle={{ objectFit: 'contain' }} className={`cheap-advantage-img`} fluid={data.image} />
+        <Button className={`small-screen`} link={buttonLink}>{buttonText}</Button>
+      </Container>
+    </SectorBlock>
   );
 }
 

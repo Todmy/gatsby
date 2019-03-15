@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
-import { Menu } from './Header/index' // TODO: resolve index file
-import { Footer } from './Footer/index' // TODO: resolve index file
-import './layout.css'
+import Header from './header'
+import Footer from './footer'
+import './layout.scss'
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -19,7 +19,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Menu />
+        <Header />
         <div>
           <main>{children}</main>
         </div>

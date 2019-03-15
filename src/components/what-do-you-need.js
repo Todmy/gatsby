@@ -1,5 +1,8 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
+import SectorBlock from './sector-block'
+
+import './what-do-you-need.scss'
 
 function urlify(name) {
   return name.toLocaleLowerCase()
@@ -13,8 +16,6 @@ function topCategoryUrl(category) {
   return `/app/c/${urlify(category.name)}/`
 }
 
-const Section = ({children}) => <section className={`what-need`}>{children}</section>
-const SectionContent = ({children}) => <div className={`what-need-content`}>{children}</div>
 const H1 = ({children}) => <h1 className={`what-need-header`}>{children}</h1>
 const Categories = ({ children }) => <div className={`what-need-categories`}>{children}</div>
 
@@ -42,14 +43,12 @@ const WhatDoYouNeed = ({ data }) => {
   }))
 
   return (
-    <Section>
-      <SectionContent>
-        <H1>Vad behöver du hjälp med idag?</H1>
-        <Categories>
-          { buttonsToDisplay.map((el, i) => <LinkButton key={i} el={el} />) }
-        </Categories>
-      </SectionContent>
-    </Section>
+    <SectorBlock className={`what-need`}>
+      <H1>Vad behöver du hjälp med idag?</H1>
+      <Categories>
+        { buttonsToDisplay.map((el, i) => <LinkButton key={i} el={el} />) }
+      </Categories>
+    </SectorBlock>
   )
 }
 

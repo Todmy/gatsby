@@ -1,0 +1,95 @@
+$xs-size: 400px;
+$sm-size: 768px;
+$md-size: 990px;
+
+.cheap-advantage {
+  background-color: #23af9d;
+  color: #fff;
+  font-size: 15px;
+  overflow: auto;
+  padding: 45px 20px;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $md-size) {
+    flex-direction: row;
+  }
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $md-size) {
+      flex-direction: row;
+    }
+  }
+
+  &-header {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    margin-top: 0;
+    text-align: left;
+
+    @media (min-width: $md-size) {
+      font-size: 32px;
+    }
+  }
+
+  &-img {
+    max-width: 350px;
+    width: 100%;
+    margin: auto;
+  }
+
+  &-description {
+    text-align: justify;
+    font-size: 15px;
+    padding-bottom: 30px;
+
+    @media (min-width: $md-size) {
+      padding-right: 30px;
+    }
+  }
+
+  &-info {
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  &-button {
+    background-color: #fff;
+    border-radius: 6px;
+    color: #23af9d;
+    font-weight: 700;
+    margin: auto;
+    padding: 10px 50px;
+    text-decoration: none;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: 30px;
+
+    @media (min-width: $md-size) {
+      &.big-screen {
+        display: inline;
+      }
+    }
+  }
+}
+
+.small-screen {
+  display: inherit;
+}
+
+.big-screen {
+  display: none;
+}
+
+@media (min-width: $md-size) {
+  .small-screen {
+    display: none;
+  }
+  .big-screen {
+    display: inherit;
+  }
+}

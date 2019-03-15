@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Home from '../../assets/home.svg';
-import Mail from '../../assets/mail.svg';
-import Phone from '../../assets/phone.svg';
+import Home from '../assets/home.svg';
+import Mail from '../assets/mail.svg';
+import Phone from '../assets/phone.svg';
 
-import './styles.scss';
+import './footer.scss';
 
 const footerLinks2 = [
   { href: 'https://omoss.taskrunner.se/', text: 'Om oss' },
@@ -99,7 +99,7 @@ const ModalHeader = ({ onClick }) => <div onClick={onClick} className={`modal-wi
 const ModalHeading = ({ children }) => <h2 className={`modal-window-content__greyed-text`}>{children}</h2>;
 const ModalP = ({ children }) => <p className={`modal-window-content__greyed-text`}>{children}</p>;
 
-export class Footer extends React.Component {
+export default class Footer extends React.Component {
   constructor(...props) {
     super(...props)
     this.state = {

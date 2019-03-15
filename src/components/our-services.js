@@ -1,8 +1,9 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
+import SectorBlock from './sector-block'
 
-import './styles.scss'
+import './our-services.scss'
 
 const Container = ({ children }) => <section className={`our-services`}>{children}</section>
 const Header = ({ children }) => <h2 className={`our-services-header`}>{children}</h2>
@@ -25,13 +26,15 @@ const OurServices = ({ data }) => {
   const { title, buttonTitle, services, buttonLink } = data
 
   return (
-    <Container>
-      <Header>{title}</Header>
-      <Content>
-        { services.map((serv, i) => <Service key={i} data={serv} />) }
-      </Content>
-      <Button link={buttonLink}>{buttonTitle}</Button>
-    </Container>
+    <SectorBlock>
+      <Container>
+        <Header>{title}</Header>
+        <Content>
+          { services.map((serv, i) => <Service key={i} data={serv} />) }
+        </Content>
+        <Button link={buttonLink}>{buttonTitle}</Button>
+      </Container>
+    </SectorBlock>
   );
 }
 

@@ -1,0 +1,88 @@
+$xs-size: 400px;
+$sm-size: 768px;
+$md-size: 990px;
+
+.insurance-banner {
+  display: inline-block;
+  transition: opacity .3s ease;
+  border-radius: 4px;
+  font-size: 15px;
+  width: 90%;
+  margin-top: 30px;
+  padding: 12px;
+  background-color: white;
+
+  .flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .insurance-logo {
+    $logo-size: 20px;
+    width: $logo-size;
+    height: $logo-size;
+    margin-right: 12px;
+
+    @media (min-width: $md-size) {
+      margin-right: 20px;
+    }
+  }
+
+  @media (min-width: $xs-size) {
+    width: 80%;
+    min-width: 360px;
+  }
+
+  @media (min-width: $md-size) {
+    margin-top: 50px;
+    width: 55%;
+    padding: 20px;
+    min-width: 640px !important;
+    background-color: #f4f4f4;
+  }
+
+  &__text {
+    color: #23af9d
+  }
+
+  @media (max-width: $sm-size) {
+    &__desktop-only {
+      display: none;
+    }
+
+    a {
+      text-decoration: underline;
+      padding-left: 6px;
+    }
+  }
+
+  @media (min-width: $sm-size) {
+    &__mobile-only {
+      display: none;
+    }
+
+    a {
+      text-decoration: underline;
+      padding-left: 10px;
+    }
+  }
+
+  .close-cross {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    border: 1px solid #3ab69e;
+    border-radius: 8px;
+    color: #3ab69e;
+    cursor: pointer;
+    font-size: 10px;
+    height: 16px;
+    width: 16px;
+  }
+
+  &.hide {
+    visibility: hidden;
+  }
+}
