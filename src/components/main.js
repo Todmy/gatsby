@@ -1,5 +1,4 @@
 import React from 'react'
-import { graphql, StaticQuery } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 import Typing from 'react-typing-animation'
 import Checkmark from './checkmark'
@@ -19,10 +18,13 @@ const CheckItem = ({ children }) => (
   </div>
 )
 
-class Main extends React.Component {
+export default class Main extends React.Component {
   constructor(...props) {
     super(...props)
+    const [componentProperties] = props
+
     this.state = {
+      data: componentProperties.data,
       isBoringCrossed: '',
       isFunShoulBeShown: false,
     }
@@ -44,7 +46,7 @@ class Main extends React.Component {
         <InsuranceBanner />
 
         {
-          this.props.data.content.childContentJson.headingSet.map(([ howFun, boring, fun ], i) => {
+          this.state.data.headingSet.map(([ howFun, boring, fun ], i) => {
             return <H1 key={i}>
               <div>{ howFun }</div>
               {/* TODO: think about animations */}
@@ -62,11 +64,11 @@ class Main extends React.Component {
           })
         }
         <H2>
-          <p dangerouslySetInnerHTML={{ __html: this.props.data.content.childContentJson.subHeading }} />
+          <p dangerouslySetInnerHTML={{ __html: this.state.data.subHeading }} />
         </H2>
 
         <CheckSection>
-          {this.props.data.content.childContentJson.checkItems.map((item) => <CheckItem key={item}>{item}</CheckItem>) }
+          {this.state.data.checkItems.map((item) => <CheckItem key={item}>{item}</CheckItem>) }
         </CheckSection>
       </>
     )
@@ -77,7 +79,7 @@ class Main extends React.Component {
       <BackgroundImage
         Tag="div"
         className={`main`}
-        fluid={this.props.data.desktop.childImageSharp.fluid}
+        fluid={this.state.data.bgImage.childImageSharp.fluid}
         backgroundColor={`#edeef0`}
       >
         <SectorBlock>
@@ -87,32 +89,3 @@ class Main extends React.Component {
     )
   }
 }
-
-const Component = () => (
-  <StaticQuery
-    query={
-      graphql`
-        query {
-          desktop: file(relativePath: { eq: "assets/paint-brush.jpg" }) {
-            childImageSharp {
-              fluid(quality: 100, maxWidth: 4160) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
-            }
-          }
-          content: file(name: {eq: "main"}) {
-            childContentJson {
-              tagHeader
-              headingSet
-              subHeading
-              checkItems
-            }
-          }
-        }
-      `
-    }
-    render={(data) => <Main data={data} />}
-  />
-)
-
-export default Component

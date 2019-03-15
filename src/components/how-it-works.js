@@ -1,6 +1,5 @@
 
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
 import SectorBlock from './sector-block'
 
 import './how-it-works.scss'
@@ -54,27 +53,4 @@ const HowItWorks = ({ data }) => {
   );
 }
 
-
-const Component = () => (
-  <StaticQuery
-    query={
-      graphql`
-        query {
-          howItWorks: file(name: { eq: "how-it-works" }) {
-            childContentJson {
-              title
-              options {
-                title
-                content
-                image
-              }
-            }
-          }
-        }
-      `
-    }
-    render={(data) => <HowItWorks data={data.howItWorks.childContentJson} />}
-  />
-)
-
-export default Component
+export default HowItWorks

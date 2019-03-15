@@ -1,5 +1,4 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Checkmark from './checkmark'
 import SectorBlock from './sector-block'
@@ -17,12 +16,12 @@ const OptionItem = ({ children }) => (
 )
 
 const WhosComming = ({ data }) => {
-  const { title, points } = data.text
+  const { title, points, image } = data
 
   return (
     <SectorBlock className={`whos-comming`}>
       <Content>
-        <Img imgStyle={{objectFit: 'contain'}} className={`whos-comming-img`} fluid={data.image} />
+        <Img imgStyle={{ objectFit: 'contain' }} className={`whos-comming-img`} fluid={image.childImageSharp.fluid} />
         <Options>
           <Header>{title}</Header>
           { points.map((point, i) => <OptionItem key={i}>{point}</OptionItem>) }
@@ -32,37 +31,4 @@ const WhosComming = ({ data }) => {
   );
 }
 
-
-const Component = () => (
-  <StaticQuery
-    query={
-      graphql`
-        query {
-          whoIsComming: file(name: { eq: "who-is-comming" }) {
-            childContentJson {
-              title
-              points
-            }
-          }
-          runnersImg: file(relativePath: { eq: "assets/runners-profiles.png" }) {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      `
-    }
-    render={(data) => (
-      <WhosComming
-        data={{
-          text: data.whoIsComming.childContentJson,
-          image: data.runnersImg.childImageSharp.fluid,
-        }}
-      />
-    )}
-  />
-)
-
-export default Component
+export default WhosComming

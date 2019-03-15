@@ -1,5 +1,4 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 import SectorBlock from './sector-block'
 
@@ -38,35 +37,4 @@ const OurServices = ({ data }) => {
   );
 }
 
-
-const Component = () => (
-  <StaticQuery
-    query={
-      graphql`
-        query {
-          ourServices: file(name: {eq: "our-services"}) {
-            childContentJson {
-              title
-              buttonTitle
-              buttonLink
-              services {
-                link
-                title
-                img {
-                  childImageSharp {
-                    fluid {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      `
-    }
-    render={(data) => <OurServices data={data.ourServices.childContentJson} />}
-  />
-)
-
-export default Component
+export default OurServices

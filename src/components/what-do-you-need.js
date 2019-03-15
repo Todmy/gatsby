@@ -1,5 +1,4 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
 import SectorBlock from './sector-block'
 
 import './what-do-you-need.scss'
@@ -35,48 +34,14 @@ const LinkButton = ({ el }) => {
 }
 
 const WhatDoYouNeed = ({ data }) => {
-  const pricesData = data.prices.childContentJson
-  const categories = data.categories.childrenCategories0Json
-  const buttonsToDisplay = categories.map(category => ({
-    ...category,
-    price: pricesData.prices.find(price => price._id === category._id).price || pricesData.defaultPrice
-  }))
-
   return (
     <SectorBlock className={`what-need`}>
-      <H1>Vad behöver du hjälp med idag?</H1>
+      <H1>{data.title}</H1>
       <Categories>
-        { buttonsToDisplay.map((el, i) => <LinkButton key={i} el={el} />) }
+        {data.categories.map((el, i) => <LinkButton key={i} el={el} />) }
       </Categories>
     </SectorBlock>
   )
 }
 
-const Component = () => (
-  <StaticQuery
-    query={
-      graphql`
-        query {
-          categories: file(name: { eq: "categories-0" }) {
-            childrenCategories0Json {
-              name
-              _id
-            }
-          }
-          prices: file(name: { eq: "prices" }) {
-            childContentJson {
-              defaultPrice
-              prices {
-                _id
-                price
-              }
-            }
-          }
-        }
-      `
-    }
-    render={(data) => <WhatDoYouNeed data={data} />}
-  />
-)
-
-export default Component
+export default WhatDoYouNeed
