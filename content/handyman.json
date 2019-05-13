@@ -1,0 +1,48 @@
+{
+  "Main": {
+    "tagHeader": "Handyman, Ikea-montering, Transport, Flytt, mm - Taskrunner",
+    "headingSet": [
+      [
+        "Vad kul med",
+        "IKEA-montering",
+        "massa tid ^100 till ^100 Netflix"
+      ]
+    ],
+    "subHeading": "Över 7 000 kompetenta och erfarna <br /> Runners redo att hjälpa dig redan idag.",
+    "checkItems": [
+      "Prisförslag inom 3 minuter",
+      "Säkra betalningar",
+      "Pengarna tillbaka om du inte är nöjd",
+      "Få hjälp redan idag"
+    ],
+    "bgImage": "../src/assets/paint-brush.jpg"
+  },
+  "WhatDoYouNeed": {
+    "title": "Vad behöver du hjälp med idag?",
+    "categories": [
+      {
+        "name": "Montera Möbler",
+        "price": "Från 300 kr"
+      },
+      {
+        "name": "Transport & flytt",
+        "price": "Från 400 kr"
+      },
+      {
+        "name": "Handyman",
+        "price": "Från 400 kr"
+      },
+      {
+        "name": "Trädgårdshjälp",
+        "price": "Från 300 kr"
+      },
+      {
+        "name": "Något annat",
+        "price": "Från 400 kr"
+      }
+    ]
+  },
+  "HowItWorks": "./how-it-works.json",
+  "ServiceDescription": "",
+  "Insurance": "./insurance.json"
+}

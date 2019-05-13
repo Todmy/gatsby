@@ -8,8 +8,6 @@ import Main from '../components/main'
 import WhatDoYouNeed from '../components/what-do-you-need'
 import HowItWorks from '../components/how-it-works'
 import WhosComming from '../components/whos-comming'
-import CheapAdvantage from '../components/cheap-advantage'
-import OurServices from '../components/our-services'
 import Insurance from '../components/insurance'
 
 export default class IndexPage extends React.Component {
@@ -40,9 +38,7 @@ export default class IndexPage extends React.Component {
         <WhatDoYouNeed data={this.state.data.WhatDoYouNeed} />
         <HowItWorks data={this.state.data.HowItWorks} />
         <WhosComming data={this.state.data.WhosComming} />
-        <CheapAdvantage data={this.state.data.CheapAdvantage} />
-        <OurServices data={this.state.data.OurServices} />
-        <Insurance data={this.state.data.Insurance} />
+        <Insurance backgroundColor='white' data={this.state.data.Insurance} />
       </Layout>
     )
   }

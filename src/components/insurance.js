@@ -10,11 +10,11 @@ const Content = ({ children }) => <div className={`insurance-content`}>{children
 const Description = ({ children }) => <div className={`insurance-description`}>{children}</div>
 const Button = ({ children, link, className }) => <a href={link} className={`insurance-button ${className}`}>{children}</a>
 
-const Insurance = ({ data }) => {
+const Insurance = ({ data, backgroundColor }) => {
   const { title, content, buttonTitle, buttonLink, img } = data
 
   return (
-    <SectorBlock className={`insurance`}>
+    <SectorBlock className={`insurance`} style={{ backgroundColor }}>
       <Container>
         <Img imgStyle={{ objectFit: 'contain' }} className={`insurance-img big-screen`} fluid={img.childImageSharp.fluid} />
         <Content>

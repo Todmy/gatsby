@@ -1,4 +1,5 @@
-1) optimize work with imates
+1) optimize work with images
 2) todos
 3) refactor compoments sepratelly
-4) move texts separatelly (refactor texts.js)
+5) move css to js
+6) make components smaller
